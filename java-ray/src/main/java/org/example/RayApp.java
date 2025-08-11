@@ -16,6 +16,7 @@ public class RayApp {
 
     public static void main(String[] args) {
         // 配置连接参数
+        System.setProperty("ray.address", "localhost:6379");
 //        System.setProperty("ray.address", "10.244.0.28:6379");
 //        System.setProperty("ray.cluster-id", "1234567890abcdef"); // 替换为实际集群ID
 //        System.setProperty("ray.raylet.config.namespace", "default");
@@ -31,6 +32,7 @@ public class RayApp {
             e.printStackTrace();
         }
 
+        System.out.println("ray.address = " + System.getProperty("ray.address"));
         // 初始化 Ray
         Ray.init();
 
